@@ -10,9 +10,11 @@ from indexed import IndexedOrderedDict
 from cursewords.core.aware import CWAware
 from cursewords.container.puzzle import Puzzle, FileReadError
 
+LIB_DIR=os.path.expanduser(os.path.join('~', '.local', 'share', 'cursewords','library'))
+
 class Library(CWAware):
 
-    def __init__(self, libdir='~/.local/share/cursewords/library/', libfile='libcache.json'):
+    def __init__(self, libdir=LIB_DIR, libfile='libcache.json'):
 
         self.last_touched = 0
 
@@ -35,6 +37,9 @@ class Library(CWAware):
 
         self.libdir = os.path.expanduser(libdir)
         self.libcache = os.path.join(os.path.expanduser(libdir), libfile)
+
+        if not os.path.exists(LIB_DIR):
+            os.makedirs(LIB_DIR)
 
         try:
             with open(self.libcache, 'r') as f:
