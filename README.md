@@ -4,25 +4,27 @@ I'm so, so sorry.
 
 ### Installing
 
-1. Stick `cursewords` somewhere python can import it.
-2. Create the following directories (yes, you need to do this manually):
-  - `~/.local/share/cursewords/`
-  - `~/.local/share/cursewords/library/`
-3. Make sure `cursewords.py` is executable.
+To install, simply run the following:
+```
+git clone https://github.com/rent-yr-chemicals/cursewords.git
+cd cursewords
+pip install .
+```
+(It has been brought to my attention that another ncurses-powered crossword app with the name "cursewords" exists; running `pip install cursewords` will install _that other app_ instead, which will probably run better for you, but I will be sad)
 
 ### Launching
 
-To launch the app, simply run `cursewords.py`.
+To launch the app, simply run `cursewords` from the command line.
 
 To import a .puz file, use
 ```
-cursewords.py [--source SOURCE] [file]
+cursewords [--source SOURCE] [file]
 ```
 The optional `SOURCE` parameter sets the name that will appear in the "Source" field when browsing your puzzle collection.
 
 ### Configuring
 
-Pretty much all the config is hard-coded. It'll look ugly unless your terminal uses custom colors. Might have broken glyphs unless you're using a [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) patched font. Looks best using a special version of `kitty` compiled to support extra box-drawing glyphs; this is not available anywhere on any platforms.
+Pretty much all the config is hard-coded. It'll look ugly unless your terminal uses custom colors. Might have broken glyphs unless you're using a [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) patched font. Looks best using a special version of `kitty` compiled to support extra box-drawing glyphs, which is not available anywhere on any platforms.
 
 ### Troubleshooting
 
