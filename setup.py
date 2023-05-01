@@ -25,7 +25,7 @@ def make_launcher():
 def main():
     setup(
         name='cursewords',
-        version='420.69',
+        version='69.420.1312',
         packages=(
             'cursewords',
             'cursewords.core',
